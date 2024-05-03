@@ -1,9 +1,15 @@
+"use client"
+
 import type { RestOfProps } from "@/types"
 import { Button, Headline, RecipeCard } from "@/components"
+import { useContext } from "react"
+import { RecipesContext } from "@/context"
 
 interface MainContentProps extends RestOfProps {}
 
 export const MainContent = ({ className, ...props }: MainContentProps) => {
+  const recipes = useContext(RecipesContext)
+
   return (
     <main className="mt-14" {...props}>
       <Headline as="h3" size="sm">
@@ -21,26 +27,8 @@ export const MainContent = ({ className, ...props }: MainContentProps) => {
 
       {/* Recipes posts */}
       <section className="grid grid-cols-3 gap-10">
-        <RecipeCard
-          image="https://picsum.photos/600"
-          datetime="2 de mayo, 2023"
-          title="Off to the grill! The most beautiful BBQ recipes"
-        />
-        <RecipeCard
-          image="https://picsum.photos/600"
-          datetime="2 de mayo, 2023"
-          title="Off to the grill! The most beautiful BBQ recipes"
-        />
-        <RecipeCard
-          image="https://picsum.photos/600"
-          datetime="2 de mayo, 2023"
-          title="Off to the grill! The most beautiful BBQ recipes"
-        />
-        <RecipeCard
-          image="https://picsum.photos/600"
-          datetime="2 de mayo, 2023"
-          title="Off to the grill! The most beautiful BBQ recipes"
-        />
+        {recipes.length > 0 &&
+          recipes.map(({ id, thumbnail, ...props }) => <RecipeCard key={id} image={thumbnail} {...props} />)}
       </section>
     </main>
   )
