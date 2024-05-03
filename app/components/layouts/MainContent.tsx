@@ -17,7 +17,7 @@ export const MainContent = ({ className, ...props }: MainContentProps) => {
       </Headline>
 
       {/* Posts filter */}
-      <div className="my-4 flex w-fit gap-y-4 rounded-full border border-gray-300 p-1">
+      <div className="my-6 flex w-fit gap-y-4 rounded-full border border-gray-300 p-1">
         <Button variant="dark">Ver receta</Button>
         <Button>Proteínas</Button>
         <Button>Carbohidratos</Button>
@@ -26,7 +26,7 @@ export const MainContent = ({ className, ...props }: MainContentProps) => {
       </div>
 
       {/* Recipes posts */}
-      <section className="grid grid-cols-3 gap-10">
+      <section className="grid grid-cols-3 gap-6">
         {recipes.length > 0 &&
           recipes.map(({ id, thumbnail, ...props }) => <RecipeCard key={id} image={thumbnail} {...props} />)}
       </section>
