@@ -1,5 +1,6 @@
-import { Field, Logo, Navigation } from "@/components"
+import { FieldGroup, Logo, Navigation } from "@/components"
 import type { RestOfProps } from "@/types"
+import { IoSearchOutline } from "react-icons/io5"
 
 interface HeaderProps extends RestOfProps {
   className?: string
@@ -14,7 +15,7 @@ export const Header = ({ className = "", ...props }: HeaderProps) => {
       </div>
 
       <div>
-        <Field placeholder="Busca una receta" />
+        <FieldGroup icon={IoSearchOutline} placeholder="Busca una receta" />
       </div>
     </header>
   )
