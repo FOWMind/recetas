@@ -13,3 +13,26 @@
     @apply text-sm 2xl:text-base;
   }
 }
+
+@layer utilities {
+  .direct-child-block > * {
+    @apply block w-full;
+  }
+
+  .show-submenu > ul {
+    @apply visible translate-y-full opacity-100;
+  }
+
+  .hidden-submenu {
+    @apply invisible opacity-0;
+  }
+
+  .submenu-transition {
+    transition-property: visibility, opacity, transform;
+    @apply duration-300;
+  }
+
+  .submenu-menu {
+    @apply [&>ul]:bottom-auto [&>ul]:left-full [&>ul]:top-0 [&>ul]:!translate-y-0;
+  }
+}

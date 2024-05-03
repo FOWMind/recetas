@@ -1,4 +1,4 @@
-import { Link } from "@/components"
+import { Link, LinkList } from "@/components"
 
 interface NavigationProps {
   className?: string
@@ -12,7 +12,20 @@ export const Navigation = ({ className = "", ...props }: NavigationProps) => {
           <Link href="/">Inicio</Link>
         </li>
         <li>
-          <Link href="#">Explorar</Link>
+          <LinkList label="Explorar" as="span">
+            <LinkList label="Recetas" href="/recetas" className="submenu-menu">
+              <Link href="/recetas/verificadas" shallow>
+                Verificadas
+              </Link>
+              <Link href="/recetas/comunitarias" shallow>
+                Comunitarias
+              </Link>
+            </LinkList>
+
+            <Link href="/consejos" shallow>
+              Consejos
+            </Link>
+          </LinkList>
         </li>
       </ul>
     </nav>

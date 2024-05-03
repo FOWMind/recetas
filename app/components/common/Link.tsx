@@ -1,12 +1,13 @@
-import type { RestOfProps } from "@/types"
+import type { LinkProps } from "@/types"
 import NextLink from "next/link"
 
-interface LinkProps extends RestOfProps {
-  href: string
-  className?: string
-  shallow?: boolean
-}
-
-export const Link = ({ className = "", ...props }: LinkProps) => {
-  return <NextLink className={`p-2 font-medium text-black hover:text-neutral-800 ${className}`} {...props} />
+export const Link = ({ className = "", href, as, ...props }: LinkProps) => {
+  const As = as ?? NextLink
+  return (
+    <As
+      className={`inline-block p-2 font-medium text-black hover:text-neutral-800 ${className}`}
+      href={!as ? href : null}
+      {...props}
+    />
+  )
 }

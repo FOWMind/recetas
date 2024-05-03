@@ -17,3 +17,11 @@ export interface Recipe {
   title: string
   postSlug: string
 }
+
+export interface LinkProps extends RestOfProps {
+  href: string
+  className?: string
+  shallow?: boolean
+}
+
+export type MappableChildren = React.ReactElement | Array<React.ReactElement>
