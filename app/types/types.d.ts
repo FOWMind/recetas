@@ -11,38 +11,24 @@ export interface RestOfProps {
   [restOfProps: string]: any
 }
 
-export interface WrapperProps extends RestOfProps {
+export interface OptionalClassName {
   className?: string
 }
 
-export interface HeaderProps extends RestOfProps {
-  className?: string
-}
+export interface WrapperProps extends RestOfProps, OptionalClassName {}
+export interface HeaderProps extends RestOfProps, OptionalClassName {}
 
-export interface HeadlineProps extends RestOfProps {
+export interface HeadlineProps extends RestOfProps, OptionalClassName {
   as?: Heading
-  className?: string
   size?: ComponentSize
 }
 
-export interface LogoProps extends RestOfProps {
-  className?: string
-}
+export interface LogoProps extends RestOfProps, OptionalClassName {}
+export interface NavigationProps extends OptionalClassName {}
+export interface HeroProps extends RestOfProps, OptionalClassName {}
+export interface MainContentProps extends RestOfProps, OptionalClassName {}
 
-export interface NavigationProps {
-  className?: string
-}
-
-export interface HeroProps extends RestOfProps {
-  className?: string
-}
-
-export interface MainContentProps extends RestOfProps {
-  className?: string
-}
-
-export interface ButtonProps extends RestOfProps {
-  className?: string
+export interface ButtonProps extends RestOfProps, OptionalClassName {
   variant?: ButtonVariant
 }
 
@@ -58,38 +44,30 @@ export interface Recipe {
   postSlug: string
 }
 
-export interface RecipeCardProps extends RestOfProps, Omit<Recipe, "id" | "thumbnail"> {
-  className?: string
-}
+export interface RecipeCardProps extends RestOfProps, OptionalClassName, Omit<Recipe, "id" | "thumbnail"> {}
 
-export interface LinkProps extends RestOfProps {
+export interface LinkProps extends RestOfProps, OptionalClassName {
   href: string
-  className?: string
   shallow?: boolean
 }
 
-export interface LinkListProps extends Omit<LinkProps, "href"> {
+export interface LinkListProps extends OptionalClassName, Omit<LinkProps, "href"> {
   label: string
-  className?: string
   children: MappableChildren
 }
 
-export interface SubmenuProps extends RestOfProps {
-  className?: string
+export interface SubmenuProps extends RestOfProps, OptionalClassName {
   children: MappableChildren
 }
 
-export interface IconProps extends RestOfProps {
+export interface IconProps extends RestOfProps, OptionalClassName {
   icon: IconType
-  className?: string
 }
 
-export interface FieldProps extends RestOfProps {
+export interface FieldProps extends RestOfProps, OptionalClassName {
   type?: React.HTMLInputTypeAttribute
-  className?: string
 }
 
-export interface FieldGroupProps extends RestOfProps {
+export interface FieldGroupProps extends RestOfProps, OptionalClassName {
   icon?: IconType
-  className?: string
 }
