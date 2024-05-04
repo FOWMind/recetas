@@ -1,9 +1,4 @@
-import type { RestOfProps } from "@/types"
-
-interface FieldProps extends RestOfProps {
-  type?: React.HTMLInputTypeAttribute
-  className?: string
-}
+import type { FieldProps } from "@/types"
 
 export const Field = ({ type = "text", className = "", ...props }: FieldProps) => {
   return (

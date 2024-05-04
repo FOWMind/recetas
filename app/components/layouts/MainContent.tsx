@@ -1,11 +1,9 @@
 "use client"
 
-import type { RestOfProps } from "@/types"
+import type { MainContentProps } from "@/types"
 import { Button, Headline, RecipeCard } from "@/components"
 import { useContext } from "react"
 import { RecipesContext } from "@/context"
-
-interface MainContentProps extends RestOfProps {}
 
 export const MainContent = ({ className, ...props }: MainContentProps) => {
   const recipes = useContext(RecipesContext)

@@ -1,9 +1,5 @@
 import { Button, Headline } from "@/components"
-import type { RestOfProps } from "@/types"
-
-interface HeroProps extends RestOfProps {
-  className?: string
-}
+import type { HeroProps } from "@/types"
 
 export const Hero = ({ className = "", ...props }: HeroProps) => {
   return (

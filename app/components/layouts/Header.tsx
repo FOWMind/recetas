@@ -1,10 +1,6 @@
 import { FieldGroup, Logo, Navigation } from "@/components"
-import type { RestOfProps } from "@/types"
+import type { HeaderProps } from "@/types"
 import { IoSearchOutline } from "react-icons/io5"
-
-interface HeaderProps extends RestOfProps {
-  className?: string
-}
 
 export const Header = ({ className = "", ...props }: HeaderProps) => {
   return (

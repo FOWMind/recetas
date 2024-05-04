@@ -1,8 +1,4 @@
-import type { RestOfProps } from "@/types"
-
-interface WrapperProps extends RestOfProps {
-  className?: string
-}
+import type { WrapperProps } from "@/types"
 
 export const Wrapper = ({ className = "", ...props }: WrapperProps) => {
   return (

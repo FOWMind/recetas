@@ -1,5 +1,4 @@
-import type { RestOfProps } from "@/types"
-import { IconType } from "react-icons"
+import type { IconProps } from "@/types"
 
 /*
   Note:
@@ -8,11 +7,6 @@ import { IconType } from "react-icons"
   Example:
   Icon = icon as React.ElementType
 */
-interface IconProps extends RestOfProps {
-  icon: IconType
-  className?: string
-}
-
 export const Icon = ({ icon: Icon, className = "", ...props }: IconProps) => {
   return <Icon className={`inline-block align-middle text-inherit ${className}`} {...props} />
 }

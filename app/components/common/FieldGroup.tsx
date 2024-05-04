@@ -1,11 +1,5 @@
 import { Field, Icon } from "@/components"
-import type { RestOfProps } from "@/types"
-import type { IconType } from "react-icons"
-
-interface FieldGroupProps extends RestOfProps {
-  icon?: IconType
-  className?: string
-}
+import type { FieldGroupProps } from "@/types"
 
 /**
  * @returns A field group with the field included.

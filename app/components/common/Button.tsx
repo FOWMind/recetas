@@ -1,13 +1,8 @@
-import type { ButtonVariant, RestOfProps } from "@/types"
+import type { ButtonProps } from "@/types"
 
 enum variants {
   default = "bg-white text-black",
   dark = "bg-black text-white",
-}
-
-interface ButtonProps extends RestOfProps {
-  className?: string
-  variant?: ButtonVariant
 }
 
 export const Button = ({ className = "", variant = "default", ...props }: ButtonProps) => {

@@ -1,10 +1,5 @@
-import type { MappableChildren, RestOfProps } from "@/types"
+import type { SubmenuProps } from "@/types"
 import { Children } from "react"
-
-interface SubmenuProps extends RestOfProps {
-  className?: string
-  children: MappableChildren
-}
 
 export const Submenu = ({ className = "", children, ...props }: SubmenuProps) => {
   return (

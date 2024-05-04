@@ -1,10 +1,6 @@
-import type { Recipe, RestOfProps } from "@/types"
+import type { RecipeCardProps } from "@/types"
 import Image from "next/image"
 import { Headline, Link } from "@/components"
-
-interface RecipeCardProps extends RestOfProps, Omit<Recipe, "id" | "thumbnail"> {
-  className?: string
-}
 
 export const RecipeCard = ({
   className = "",

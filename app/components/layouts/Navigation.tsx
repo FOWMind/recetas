@@ -1,8 +1,5 @@
 import { Link, LinkList } from "@/components"
-
-interface NavigationProps {
-  className?: string
-}
+import { NavigationProps } from "@/types"
 
 export const Navigation = ({ className = "", ...props }: NavigationProps) => {
   return (

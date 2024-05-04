@@ -1,9 +1,5 @@
 import { Headline } from "@/components"
-import type { RestOfProps } from "@/types"
-
-interface LogoProps extends RestOfProps {
-  className?: string
-}
+import type { LogoProps } from "@/types"
 
 export const Logo = ({ className = "", ...props }: LogoProps) => {
   return (
