@@ -3,7 +3,7 @@ import { NavigationProps } from "@/types"
 
 export const Navigation = ({ className = "", ...props }: NavigationProps) => {
   return (
-    <nav {...props}>
+    <nav className={`${className}`} {...props}>
       <ul className="flex items-center justify-start gap-3">
         <li>
           <Link href="/">Inicio</Link>

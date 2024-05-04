@@ -5,11 +5,11 @@ import { Button, Headline, RecipeCard } from "@/components"
 import { useContext } from "react"
 import { RecipesContext } from "@/context"
 
-export const MainContent = ({ className, ...props }: MainContentProps) => {
+export const MainContent = ({ className = "", ...props }: MainContentProps) => {
   const recipes = useContext(RecipesContext)
 
   return (
-    <main className="mt-14" {...props}>
+    <main className={`mt-14 ${className}`} {...props}>
       <Headline as="h3" size="sm">
         Publicaciones
       </Headline>
