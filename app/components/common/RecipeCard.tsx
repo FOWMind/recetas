@@ -8,6 +8,7 @@ export const RecipeCard = ({
   datetime,
   title,
   postSlug,
+  categories,
   children,
   ...props
 }: RecipeCardProps) => {

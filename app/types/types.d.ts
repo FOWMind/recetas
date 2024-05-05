@@ -6,6 +6,7 @@ export type ComponentSize = "xs" | "sm" | "md" | "lg" | "xl"
 export type ButtonVariant = "default" | "dark"
 export type MappableChildren = React.ReactElement | Array<React.ReactElement>
 export type IconType = ReactIconType
+export type Category = number
 
 export interface RestOfProps {
   [restOfProps: string]: any
@@ -13,6 +14,10 @@ export interface RestOfProps {
 
 export interface OptionalClassName {
   className?: string
+}
+
+export interface Categories {
+  [key: number]: string
 }
 
 export interface WrapperProps extends RestOfProps, OptionalClassName {}
@@ -35,13 +40,13 @@ export interface ButtonProps extends RestOfProps, OptionalClassName {
 export interface RecipesProviderProps {
   children: React.ReactNode
 }
-
 export interface Recipe {
   id: string
   thumbnail: string
   datetime: Date
   title: string
   postSlug: string
+  categories: Category[]
 }
 
 export interface RecipeCardProps extends RestOfProps, OptionalClassName, Omit<Recipe, "id" | "thumbnail"> {}
@@ -70,4 +75,8 @@ export interface FieldProps extends RestOfProps, OptionalClassName {
 
 export interface FieldGroupProps extends RestOfProps, OptionalClassName {
   icon?: IconType
+}
+
+export interface RecipesListProps extends RestOfProps, OptionalClassName {
+  recipes: Recipe[]
 }

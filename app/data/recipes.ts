@@ -7,6 +7,7 @@ export const recipes: Recipe[] = [
     datetime: new Date(),
     title: "Pizza Margarita",
     postSlug: "pizza-margarita",
+    categories: [2, 3],
   },
   {
     id: "124",
@@ -14,6 +15,7 @@ export const recipes: Recipe[] = [
     datetime: new Date(),
     title: "Pizza Margarita",
     postSlug: "pizza-margarita",
+    categories: [1],
   },
   {
     id: "723",
@@ -21,6 +23,7 @@ export const recipes: Recipe[] = [
     datetime: new Date(),
     title: "Pizza Margarita",
     postSlug: "pizza-margarita",
+    categories: [1, 2],
   },
   {
     id: "323",
@@ -28,6 +31,7 @@ export const recipes: Recipe[] = [
     datetime: new Date(),
     title: "Pizza Margarita",
     postSlug: "pizza-margarita",
+    categories: [3, 2],
   },
   {
     id: "153",
@@ -35,19 +39,6 @@ export const recipes: Recipe[] = [
     datetime: new Date(),
     title: "Pizza Margarita",
     postSlug: "pizza-margarita",
-  },
-  {
-    id: "173",
-    thumbnail: "https://picsum.photos/600",
-    datetime: new Date(),
-    title: "Pizza Margarita",
-    postSlug: "pizza-margarita",
-  },
-  {
-    id: "121",
-    thumbnail: "https://picsum.photos/600",
-    datetime: new Date(),
-    title: "Pizza Margarita",
-    postSlug: "pizza-margarita",
+    categories: [3, 1, 2],
   },
 ]
