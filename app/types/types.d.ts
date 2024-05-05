@@ -20,6 +20,12 @@ export interface Categories {
   [key: number]: string
 }
 
+export interface CategoriesFilterProps extends RestOfProps, OptionalClassName {
+  categories: Category[]
+  categoryFormatter: Function
+  defaultCategory?: Category
+}
+
 export interface WrapperProps extends RestOfProps, OptionalClassName {}
 export interface HeaderProps extends RestOfProps, OptionalClassName {}
 

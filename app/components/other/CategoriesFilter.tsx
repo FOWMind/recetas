@@ -1,14 +1,8 @@
 "use client"
 import { Button } from "@/components"
 import { globalDefaultCategory } from "@/constants"
-import type { Category, OptionalClassName, RestOfProps } from "@/types"
+import type { CategoriesFilterProps, Category } from "@/types"
 import { useState } from "react"
-
-interface CategoriesFilterProps extends RestOfProps, OptionalClassName {
-  categories: Category[]
-  categoryFormatter: Function
-  defaultCategory?: Category
-}
 
 export const CategoriesFilter = ({
   className = "",
