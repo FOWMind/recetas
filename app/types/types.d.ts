@@ -3,7 +3,7 @@ import { IconType as ReactIconType } from "react-icons"
 export type AsProp = keyof JSX.IntrinsicElements
 export type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
 export type ComponentSize = "xs" | "sm" | "md" | "lg" | "xl"
-export type ButtonVariant = "default" | "dark"
+export type ButtonVariant = "default" | "featured"
 export type MappableChildren = React.ReactElement | Array<React.ReactElement>
 export type IconType = ReactIconType
 export type Category = number

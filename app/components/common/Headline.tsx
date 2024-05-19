@@ -10,5 +10,10 @@ enum sizes {
 
 export const Headline = ({ as = "h2", size = "md", className = "", ...props }: HeadlineProps) => {
   const As = as
-  return <As className={`block font-medium !leading-tight text-black ${sizes[size]} ${className}`} {...props} />
+  return (
+    <As
+      className={`block font-medium !leading-tight text-black dark:text-white ${sizes[size]} ${className}`}
+      {...props}
+    />
+  )
 }

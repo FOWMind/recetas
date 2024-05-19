@@ -2,15 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @media (prefers-color-scheme: dark) {
-  body {
-    background-color: #000;
-  }
-} */
-
 @layer base {
   body {
-    @apply text-sm 2xl:text-base;
+    @apply bg-white text-sm 2xl:text-base dark:bg-black;
   }
 }
 

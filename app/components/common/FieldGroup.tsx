@@ -8,7 +8,12 @@ import type { FieldGroupProps } from "@/types"
 export const FieldGroup = ({ className = "", icon, ...props }: FieldGroupProps) => {
   return (
     <div className={`relative h-12 w-full max-w-60 rounded-full bg-gray-200 ${className}`}>
-      {icon && <Icon icon={icon} className="absolute left-4 top-2/4 size-5 -translate-y-2/4 text-gray-600" />}
+      {icon && (
+        <Icon
+          icon={icon}
+          className="absolute left-4 top-2/4 size-5 -translate-y-2/4 text-gray-600 dark:text-neutral-300"
+        />
+      )}
       <Field className="h-full bg-transparent pl-11" {...props} />
     </div>
   )
