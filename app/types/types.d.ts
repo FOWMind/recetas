@@ -43,9 +43,18 @@ export interface ButtonProps extends RestOfProps, OptionalClassName {
   variant?: ButtonVariant
 }
 
+export interface ParagraphProps extends RestOfProps, OptionalClassName {}
+
 export interface RecipesProviderProps {
   children: React.ReactNode
 }
+
+export interface RecipePageProps {
+  params: {
+    recipeSlug: string
+  }
+}
+
 export interface Recipe {
   id: string
   thumbnail: string

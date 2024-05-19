@@ -1,11 +1,10 @@
-import { Header, Hero, MainContent, Wrapper } from "@/components"
+import { Hero, MainContent } from "@/components"
 
 export default function Home() {
   return (
-    <Wrapper>
-      <Header />
+    <>
       <Hero />
       <MainContent />
-    </Wrapper>
+    </>
   )
 }

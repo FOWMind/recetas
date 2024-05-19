@@ -5,10 +5,10 @@ enum variants {
   featured = "bg-black text-white dark:bg-white dark:text-black",
 }
 
-export const Button = ({ className = "", variant = "default", ...props }: ButtonProps) => {
+export const Button = ({ className = "", as: As = "button", variant = "default", ...props }: ButtonProps) => {
   return (
-    <button
-      className={`inline-block rounded-full px-10 py-3 text-center font-medium capitalize ${variants[variant]} ${className}`}
+    <As
+      className={`inline-block rounded-full px-10 py-3 text-center font-medium ${variants[variant]} ${className}`}
       {...props}
     />
   )

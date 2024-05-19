@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-white text-sm 2xl:text-base dark:bg-black;
+    @apply bg-white text-sm text-black 2xl:text-base dark:bg-black dark:text-white;
   }
 }
 
