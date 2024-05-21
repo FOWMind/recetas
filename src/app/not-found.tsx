@@ -1,4 +1,4 @@
-import { Button, Headline, Link, Paragraph } from "./components"
+import { Button, Headline, Link, Paragraph } from "@/components"
 
 export default function NotFound() {
   return (
