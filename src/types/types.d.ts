@@ -62,7 +62,8 @@ export interface Recipe {
 	title: string
 	postSlug: string
 	categories: Category[]
-	content: string
+	// TODO: Make content required (maybe)
+	content?: string
 }
 
 export interface RecipeCardProps extends RestOfProps, OptionalClassName, Omit<Recipe, 'id' | 'thumbnail'> {}

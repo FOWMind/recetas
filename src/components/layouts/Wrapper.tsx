@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 export const Wrapper = ({ className = '', ...props }: WrapperProps) => {
 	const { setInitialRecipes } = useRecipeStore()
 
-	useEffect(() => setInitialRecipes(), [])
+	useEffect(() => setInitialRecipes(), [setInitialRecipes])
 
 	return (
 		<div className={`mx-auto min-h-screen w-full max-w-screen-lg p-5 2xl:max-w-screen-xl ${className}`} {...props} />

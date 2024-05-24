@@ -20,7 +20,7 @@ export const CategoriesFilter = ({
 		setActiveCategory(category)
 	}
 
-	useEffect(() => setFilteredRecipes(activeCategory), [activeCategory])
+	useEffect(() => setFilteredRecipes(activeCategory), [activeCategory, setFilteredRecipes])
 
 	return (
 		<div
