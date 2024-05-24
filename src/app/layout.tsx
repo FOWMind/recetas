@@ -1,29 +1,28 @@
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "@/styles/globals.css"
-import { RecipesProvider } from "@/context"
-import { Header, Wrapper } from "@/components"
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import '@/styles/globals.css'
+import { Header, Wrapper } from '@/components'
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Recetas",
-  description: "¡Encuentra todo tipo de recetas!",
+	title: 'Recetas',
+	description: '¡Encuentra todo tipo de recetas!',
 }
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode
+	children: React.ReactNode
 }>) {
-  return (
-    <html lang="es-LA">
-      <body className={inter.className}>
-        <Wrapper>
-          <Header />
-          <RecipesProvider>{children}</RecipesProvider>
-        </Wrapper>
-      </body>
-    </html>
-  )
+	return (
+		<html lang="es-LA">
+			<body className={inter.className}>
+				<Wrapper>
+					<Header />
+					{children}
+				</Wrapper>
+			</body>
+		</html>
+	)
 }

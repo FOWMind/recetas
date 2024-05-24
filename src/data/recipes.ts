@@ -8,6 +8,7 @@ export const recipes: Recipe[] = [
     title: "Pizza Margarita",
     postSlug: "pizza-margarita",
     categories: [2, 3],
+    content: "### Paso 1\nLorem ipsum"
   },
   {
     id: "124",
