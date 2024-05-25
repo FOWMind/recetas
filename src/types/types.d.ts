@@ -1,3 +1,4 @@
+import { themeClasses } from '@/constants'
 import { IconType as ReactIconType } from 'react-icons'
 
 export type AsProp = keyof JSX.IntrinsicElements
@@ -7,6 +8,14 @@ export type ButtonVariant = 'default' | 'featured'
 export type MappableChildren = React.ReactElement | Array<React.ReactElement>
 export type IconType = ReactIconType
 export type Category = number
+
+export type ThemeClassKey = keyof typeof themeClasses
+
+export interface ThemeClasses {
+	dark: string
+	light: string
+	default: string
+}
 
 export interface RestOfProps {
 	[restOfProps: string]: any
@@ -36,6 +45,7 @@ export interface HeadlineProps extends RestOfProps, OptionalClassName {
 
 export interface LogoProps extends RestOfProps, OptionalClassName {}
 export interface NavigationProps extends OptionalClassName {}
+export interface ToggleThemeProps extends RestOfProps, OptionalClassName {}
 export interface HeroProps extends RestOfProps, OptionalClassName {}
 export interface MainContentProps extends RestOfProps, OptionalClassName {}
 
