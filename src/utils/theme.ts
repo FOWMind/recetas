@@ -2,7 +2,6 @@ import { themeClasses } from '@/constants'
 import { ThemeClassKey } from '@/types'
 
 export const setInitialTheme = () => {
-	document.documentElement.classList.remove(themeClasses.default)
 	const savedTheme = localStorage.getItem('theme') as ThemeClassKey
 	setTheme(savedTheme || themeClasses.default)
 }

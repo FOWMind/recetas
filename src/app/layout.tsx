@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
 import { Header, Wrapper } from '@/components'
-import { themeClasses } from '@/constants'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +16,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="es-LA" className={themeClasses.default}>
+		<html lang="es-LA">
 			<body className={inter.className}>
 				<Wrapper>
 					<Header />
