@@ -9,11 +9,11 @@ export const Header = ({ className = '', ...props }: HeaderProps) => {
 			<div className="flex items-center justify-start gap-28">
 				<Logo />
 				<Navigation />
-				<ToggleTheme />
 			</div>
 
-			<div>
+			<div className="flex items-center justify-start gap-x-5">
 				<FieldGroup icon={IoSearchOutline} placeholder="Busca una receta" />
+				<ToggleTheme />
 			</div>
 		</header>
 	)

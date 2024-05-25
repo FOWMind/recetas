@@ -1,5 +1,5 @@
-import type { ParagraphProps } from "@/types"
+import type { ParagraphProps } from '@/types'
 
-export const Paragraph = ({ className = "", ...props }: ParagraphProps) => {
-  return <p className={`text-base text-black dark:text-white ${className}`} {...props} />
+export const Paragraph = ({ as: As = 'p', className = '', ...props }: ParagraphProps) => {
+	return <As className={`text-base text-black dark:text-white ${className}`} {...props} />
 }

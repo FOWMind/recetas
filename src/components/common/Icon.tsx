@@ -1,4 +1,4 @@
-import type { IconProps } from "@/types"
+import type { IconProps } from '@/types'
 
 /*
   Note:
@@ -7,6 +7,6 @@ import type { IconProps } from "@/types"
   Example:
   Icon = icon as React.ElementType
 */
-export const Icon = ({ icon: Icon, className = "", ...props }: IconProps) => {
-  return <Icon className={`inline-block align-middle text-inherit ${className}`} {...props} />
+export const Icon = ({ icon: Icon, className = '', ...props }: IconProps) => {
+	return <Icon className={`inline-block align-middle text-inherit ${className}`} {...props} size={24} />
 }
