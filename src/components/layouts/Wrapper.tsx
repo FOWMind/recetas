@@ -6,8 +6,7 @@ import { useEffect } from 'react'
 
 export const Wrapper = ({ className = '', ...props }: WrapperProps) => {
 	const { setInitialRecipes } = useRecipeStore()
-	setInitialTheme()
-
+	useEffect(() => setInitialTheme(), [])
 	useEffect(() => setInitialRecipes(), [setInitialRecipes])
 
 	return (
