@@ -9,7 +9,7 @@ export type MappableChildren = React.ReactElement | Array<React.ReactElement>
 export type IconType = ReactIconType
 export type Category = number
 
-export type ThemeClassKey = keyof typeof themeClasses
+export type ThemeClassKey = keyof Omit<ThemeClasses, 'defaultBoolean'>
 
 export interface ThemeClasses {
 	dark: string
