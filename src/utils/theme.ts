@@ -6,13 +6,6 @@ export const setInitialTheme = () => {
 	setTheme(savedTheme || themeClasses.default)
 }
 
-export const setTheme = (key: ThemeClassKey) => {
-	const themeClass = themeClasses[key]
-	const root = document.documentElement
-	root.classList.add(themeClass)
-	saveThemeToLocaleStorage(themeClass)
-}
-
 export const toggleTheme = () => {
 	const root = document.documentElement
 	root.classList.remove(themeClasses.light) // Make sure it doesn't have the light class.
@@ -26,13 +19,20 @@ export const toggleTheme = () => {
 	}
 }
 
-const saveThemeToLocaleStorage = (key: string) => {
-	if (key === getSavedTheme()) return
-	localStorage.setItem('theme', key)
-}
-
 export const getSavedTheme = (): GetSavedTheme => {
 	if (typeof window === 'undefined') return null
 	const savedTheme = localStorage.getItem('theme')
 	return savedTheme || null
+}
+
+const setTheme = (key: ThemeClassKey) => {
+	const themeClass = themeClasses[key]
+	const root = document.documentElement
+	root.classList.add(themeClass)
+	saveThemeToLocaleStorage(themeClass)
+}
+
+const saveThemeToLocaleStorage = (key: string) => {
+	if (key === getSavedTheme()) return
+	localStorage.setItem('theme', key)
 }

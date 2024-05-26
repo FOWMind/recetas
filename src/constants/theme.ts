@@ -4,5 +4,5 @@ export const themeClasses: ThemeClasses = {
 	dark: 'dark',
 	light: 'light',
 	default: 'dark',
-	defaultBoolean: true,
+	isDefaultVisibleDark: false, // Whether or not it has dark mode before setInitialTheme() call.
 }

@@ -9,13 +9,13 @@ export type MappableChildren = React.ReactElement | Array<React.ReactElement>
 export type IconType = ReactIconType
 export type Category = number
 
-export type ThemeClassKey = keyof Omit<ThemeClasses, 'defaultBoolean'>
+export type ThemeClassKey = keyof Omit<ThemeClasses, 'isDefaultVisibleDark'>
 
 export interface ThemeClasses {
 	dark: string
 	light: string
 	default: string
-	defaultBoolean: boolean
+	isDefaultVisibleDark: boolean
 }
 
 export type GetSavedTheme = string | null
@@ -23,6 +23,7 @@ export type GetSavedTheme = string | null
 export interface ThemeState {
 	dark: boolean
 	setDark: (value: boolean) => void
+	setInitialTheme: () => void
 	getIsDark: () => boolean
 }
 

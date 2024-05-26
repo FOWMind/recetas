@@ -1,11 +1,15 @@
 import { themeClasses } from '@/constants'
 import { ThemeState } from '@/types'
-import { getSavedTheme } from '@/utils'
+import { getSavedTheme, setInitialTheme } from '@/utils'
 import { create } from 'zustand'
 
 export const useThemeStore = create<ThemeState>((set, get) => ({
-	dark: themeClasses.defaultBoolean,
+	dark: themeClasses.isDefaultVisibleDark,
 	setDark: (value) => set({ dark: value }),
+	setInitialTheme: () => {
+		setInitialTheme()
+		get().setDark(get().getIsDark())
+	},
 	getIsDark: () => {
 		const theme = getSavedTheme()
 		if (!theme || theme === themeClasses.light) return false

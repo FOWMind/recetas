@@ -1,12 +1,12 @@
 'use client'
-import { useRecipeStore } from '@/store'
+import { useRecipeStore, useThemeStore } from '@/store'
 import type { WrapperProps } from '@/types'
-import { setInitialTheme } from '@/utils'
 import { useEffect } from 'react'
 
 export const Wrapper = ({ className = '', ...props }: WrapperProps) => {
 	const { setInitialRecipes } = useRecipeStore()
-	useEffect(() => setInitialTheme(), [])
+	const { setInitialTheme } = useThemeStore()
+	useEffect(() => setInitialTheme(), [setInitialTheme])
 	useEffect(() => setInitialRecipes(), [setInitialRecipes])
 
 	return (
