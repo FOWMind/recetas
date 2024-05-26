@@ -88,6 +88,10 @@ export interface Recipe {
 
 export interface RecipeCardProps extends RestOfProps, OptionalClassName, Omit<Recipe, 'id' | 'thumbnail'> {}
 
+export interface RecipeContentProps {
+	recipe: Recipe
+}
+
 export interface RecipeState {
 	recipes: Recipe[] | null
 	filteredRecipes: Recipe[] | null

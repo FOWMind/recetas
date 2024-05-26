@@ -1,9 +1,14 @@
 'use client'
 import type { Category, MainContentProps } from '@/types'
-import { CategoriesFilter, Headline, RecipeList } from '@/components'
+import { CategoriesFilter, Headline, Loading } from '@/components'
 import { useEffect, useState } from 'react'
 import { getUniqueValues, recipeCategoryFormatter } from '@/utils'
 import { useRecipeStore } from '@/store'
+import dynamic from 'next/dynamic'
+
+const DynamicRecipeList = dynamic(async () => (await import('@/components')).RecipeList, {
+	loading: () => <Loading />,
+})
 
 export const MainContent = ({ className = '', ...props }: MainContentProps) => {
 	const { recipes, filteredRecipes } = useRecipeStore()
@@ -27,7 +32,7 @@ export const MainContent = ({ className = '', ...props }: MainContentProps) => {
 				Publicaciones
 			</Headline>
 			<CategoriesFilter categories={recipesCategories} categoryFormatter={recipeCategoryFormatter} />
-			{recipes && <RecipeList recipes={filteredRecipes ?? recipes} />}
+			{recipes && <DynamicRecipeList recipes={filteredRecipes ?? recipes} />}
 		</main>
 	)
 }

@@ -1,11 +1,7 @@
-import type { Recipe } from '@/types'
+import type { RecipeContentProps } from '@/types'
 import { Headline } from '../common'
 import Image from 'next/image'
 import Markdown from 'react-markdown'
-
-interface RecipeContentProps {
-	recipe: Recipe
-}
 
 export const RecipeContent = ({ recipe }: RecipeContentProps) => {
 	return (
