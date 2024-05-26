@@ -1,7 +1,7 @@
-import type { RecipesListProps } from '@/types'
+import type { RecipeListProps } from '@/types'
 import { RecipeCard } from '@/components'
 
-export const RecipesList = ({ className = '', recipes, ...props }: RecipesListProps) => {
+export const RecipeList = ({ className = '', recipes, ...props }: RecipeListProps) => {
 	return (
 		<section
 			className={`grid [grid-template-columns:repeat(auto-fill,minmax(300px,1fr))] gap-6 ${className}`}

@@ -121,6 +121,6 @@ export interface FieldGroupProps extends RestOfProps, OptionalClassName {
 	icon?: IconType
 }
 
-export interface RecipesListProps extends RestOfProps, OptionalClassName {
+export interface RecipeListProps extends RestOfProps, OptionalClassName {
 	recipes: Recipe[]
 }

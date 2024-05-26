@@ -1,2 +1,1 @@
-export * from "./CategoriesFilter"
-export * from "./RecipesList"
+export * from './CategoriesFilter'

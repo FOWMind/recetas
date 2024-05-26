@@ -1,6 +1,6 @@
 'use client'
 import type { Category, MainContentProps } from '@/types'
-import { CategoriesFilter, Headline, RecipesList } from '@/components'
+import { CategoriesFilter, Headline, RecipeList } from '@/components'
 import { useEffect, useState } from 'react'
 import { getUniqueValues, recipeCategoryFormatter } from '@/utils'
 import { useRecipeStore } from '@/store'
@@ -27,7 +27,7 @@ export const MainContent = ({ className = '', ...props }: MainContentProps) => {
 				Publicaciones
 			</Headline>
 			<CategoriesFilter categories={recipesCategories} categoryFormatter={recipeCategoryFormatter} />
-			{recipes && <RecipesList recipes={filteredRecipes ?? recipes} />}
+			{recipes && <RecipeList recipes={filteredRecipes ?? recipes} />}
 		</main>
 	)
 }
