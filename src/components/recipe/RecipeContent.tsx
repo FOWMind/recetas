@@ -10,10 +10,10 @@ export const RecipeContent = ({ recipe }: RecipeContentProps) => {
 			{recipe.thumbnail && (
 				<Image
 					src={recipe.thumbnail}
-					width={300}
-					height={300}
+					width={1280}
+					height={384}
 					alt="Imagen de la receta"
-					className="block h-72 w-full object-cover object-center"
+					className="block h-96 w-full object-cover object-center"
 				/>
 			)}
 			<Markdown>{recipe?.content}</Markdown>
