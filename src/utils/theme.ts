@@ -1,8 +1,8 @@
 import { themeClasses } from '@/constants'
-import { ThemeClassKey } from '@/types'
+import { GetSavedTheme, ThemeClassKey } from '@/types'
 
 export const setInitialTheme = () => {
-	const savedTheme = localStorage.getItem('theme') as ThemeClassKey
+	const savedTheme = getSavedTheme() as ThemeClassKey
 	setTheme(savedTheme || themeClasses.default)
 }
 
@@ -27,7 +27,12 @@ export const toggleTheme = () => {
 }
 
 const saveThemeToLocaleStorage = (key: string) => {
-	const savedTheme = localStorage.getItem('theme')
-	if (key === savedTheme) return
+	if (key === getSavedTheme()) return
 	localStorage.setItem('theme', key)
+}
+
+export const getSavedTheme = (): GetSavedTheme => {
+	if (typeof window === 'undefined') return null
+	const savedTheme = localStorage.getItem('theme')
+	return savedTheme || null
 }

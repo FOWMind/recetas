@@ -1,16 +1,16 @@
 'use client'
 import { ToggleThemeProps } from '@/types'
-import { toggleTheme } from '@/utils/theme'
+import { toggleTheme } from '@/utils'
 import { Icon, Paragraph } from '@/components'
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
-import { useState } from 'react'
+import { useThemeStore } from '@/store'
 
 export const ToggleTheme = ({ className = '', ...props }: ToggleThemeProps) => {
-	const [dark, setDark] = useState(false)
+	const { dark, setDark } = useThemeStore()
 
 	const onClick = () => {
-		setDark((x) => !x)
 		toggleTheme()
+		setDark(!dark)
 	}
 
 	return (

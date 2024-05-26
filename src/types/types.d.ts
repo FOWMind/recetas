@@ -15,6 +15,15 @@ export interface ThemeClasses {
 	dark: string
 	light: string
 	default: string
+	defaultBoolean: boolean
+}
+
+export type GetSavedTheme = string | null
+
+export interface ThemeState {
+	dark: boolean
+	setDark: (value: boolean) => void
+	getIsDark: () => boolean
 }
 
 export interface RestOfProps {

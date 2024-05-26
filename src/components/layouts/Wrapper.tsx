@@ -1,7 +1,7 @@
 'use client'
 import { useRecipeStore } from '@/store'
 import type { WrapperProps } from '@/types'
-import { setInitialTheme } from '@/utils/theme'
+import { setInitialTheme } from '@/utils'
 import { useEffect } from 'react'
 
 export const Wrapper = ({ className = '', ...props }: WrapperProps) => {
