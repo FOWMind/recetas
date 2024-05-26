@@ -8,5 +8,5 @@ import type { IconProps } from '@/types'
   Icon = icon as React.ElementType
 */
 export const Icon = ({ icon: Icon, className = '', ...props }: IconProps) => {
-	return <Icon className={`inline-block align-middle text-inherit ${className}`} {...props} size={24} />
+	return <Icon className={`inline-block align-middle text-inherit ${className}`} size={24} {...props} />
 }
