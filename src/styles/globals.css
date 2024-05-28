@@ -3,50 +3,97 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-white text-sm text-black 2xl:text-base dark:bg-black dark:text-white;
-  }
+	body {
+		@apply bg-white text-sm text-black 2xl:text-base dark:bg-black dark:text-white;
+	}
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply block font-medium !leading-tight text-black dark:text-white;
-  }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply block font-medium !leading-tight text-black dark:text-white;
+	}
 
-  h1 {
-    @apply text-4xl 2xl:text-5xl;
-  }
+	h1,
+	h2 {
+		@apply text-2xl 2xl:text-3xl;
+	}
 
-  h2 {
-    @apply text-3xl 2xl:text-4xl;
-  }
+	h1 {
+		@apply font-bold;
+	}
 
-  h3, h4 {
-    @apply text-2xl 2xl:text-3xl;
-  }
+	h2 {
+		@apply font-medium;
+	}
 
-  h5, h6 {
-    @apply text-xl 2xl:text-2xl;
-  }
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply text-xl 2xl:text-2xl font-normal;
+	}
+}
+
+@layer components {
+	.recipe-content {
+		img {
+			@apply mb-5;
+		}
+
+		h1 {
+			@apply text-3xl 2xl:text-4xl;
+		}
+
+		h1,
+		h2 {
+			@apply mb-5;
+		}
+
+		h3,
+		h4,
+		h5,
+		h6 {
+			@apply mb-5;
+		}
+
+		ul,
+		ol {
+			@apply mb-10 ml-5;
+		}
+
+		li {
+			@apply list-decimal;
+		}
+
+		p,
+		li {
+			@apply text-lg;
+		}
+	}
 }
 
 @layer utilities {
-  .direct-child-block > * {
-    @apply block w-full;
-  }
+	.direct-child-block > * {
+		@apply block w-full;
+	}
 
-  .show-submenu > ul {
-    @apply visible translate-y-full opacity-100;
-  }
+	.show-submenu > ul {
+		@apply visible translate-y-full opacity-100;
+	}
 
-  .hidden-submenu {
-    @apply invisible opacity-0;
-  }
+	.hidden-submenu {
+		@apply invisible opacity-0;
+	}
 
-  .submenu-transition {
-    transition-property: visibility, opacity, transform;
-    @apply duration-300;
-  }
+	.submenu-transition {
+		transition-property: visibility, opacity, transform;
+		@apply duration-300;
+	}
 
-  .submenu-menu {
-    @apply [&>ul]:bottom-auto [&>ul]:left-full [&>ul]:top-0 [&>ul]:!translate-y-0;
-  }
+	.submenu-menu {
+		@apply [&>ul]:bottom-auto [&>ul]:left-full [&>ul]:top-0 [&>ul]:!translate-y-0;
+	}
 }
