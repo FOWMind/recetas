@@ -4,7 +4,6 @@ import Image from 'next/image'
 import Markdown from 'react-markdown'
 
 export const RecipeContent = ({ recipe }: RecipeContentProps) => {
-	console.log(recipe)
 	return (
 		<div className="recipe-content">
 			{recipe.thumbnail && (

@@ -1,28 +1,11 @@
-import type { Metadata } from 'next'
-import { Roboto } from 'next/font/google'
 import '@/styles/globals.css'
-import { Header, Wrapper } from '@/components'
 
-const roboto = Roboto({ weight: ['400', '500', '700'], subsets: ['latin'] })
-
-export const metadata: Metadata = {
-	title: 'Recetas',
-	description: '¡Encuentra todo tipo de recetas!',
+type Props = {
+	children: React.ReactNode
 }
 
-export default function RootLayout({
-	children,
-}: Readonly<{
-	children: React.ReactNode
-}>) {
-	return (
-		<html lang="es-LA">
-			<body className={roboto.className}>
-				<Wrapper>
-					<Header />
-					{children}
-				</Wrapper>
-			</body>
-		</html>
-	)
+// Since we have a `not-found.tsx` page on the root, a layout file
+// is required, even if it's just passing children through.
+export default function RootLayout({ children }: Props) {
+	return children
 }

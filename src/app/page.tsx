@@ -1,10 +1,6 @@
-import { Hero, MainContent } from '@/components'
+import { redirect } from 'next/navigation'
 
-export default function Home() {
-	return (
-		<>
-			<Hero />
-			<MainContent />
-		</>
-	)
+// This page only renders when the app is built statically (output: 'export')
+export default function RootPage() {
+	redirect('/es')
 }

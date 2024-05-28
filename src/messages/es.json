@@ -1,0 +1,39 @@
+{
+	"Header": {
+		"logo": {
+			"self": "Recetas"
+		},
+		"navigation": {
+			"home": "Inicio",
+			"explore": {
+				"self": "Explorar",
+				"recipes": {
+					"self": "Recetas",
+					"verified": "Verificadas",
+					"community": "Comunitarias"
+				},
+				"tips": "Consejos"
+			}
+		},
+		"search": {
+			"self": "Busca una receta"
+		},
+		"toggleTheme": {
+			"dark": "Modo oscuro",
+			"light": "Modo claro"
+		}
+	},
+	"Hero": {
+		"viewRecipe": "Ver receta"
+	},
+	"MainContent": {
+		"posts": "Publicaciones",
+		"categoriesFilter": {
+			"all": "Todo"
+		}
+	},
+	"NotFound": {
+		"description": "No hemos podido encontrar la página a la que ingresaste.",
+		"button": "Ir a inicio"
+	}
+}

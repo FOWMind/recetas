@@ -4,9 +4,11 @@ import { toggleTheme } from '@/utils'
 import { Icon, Paragraph } from '@/components'
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
 import { useThemeStore } from '@/store'
+import { useTranslations } from 'next-intl'
 
 export const ToggleTheme = ({ className = '', ...props }: ToggleThemeProps) => {
 	const { dark, setDark } = useThemeStore()
+	const t = useTranslations('Header.toggleTheme')
 
 	const onClick = () => {
 		toggleTheme()
@@ -20,7 +22,7 @@ export const ToggleTheme = ({ className = '', ...props }: ToggleThemeProps) => {
 			{...props}>
 			<Icon icon={dark ? MdDarkMode : MdLightMode} className="text-violet-800 dark:text-yellow-500" />
 			<Paragraph as="span" className="text-black font-medium">
-				Modo {dark ? 'oscuro' : 'claro'}
+				{dark ? t('dark') : t('light')}
 			</Paragraph>
 		</button>
 	)

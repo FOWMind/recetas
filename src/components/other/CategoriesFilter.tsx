@@ -3,6 +3,7 @@ import { Button } from '@/components'
 import { globalDefaultCategory } from '@/constants'
 import { useRecipeStore } from '@/store'
 import type { CategoriesFilterProps, Category } from '@/types'
+import { useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 
 export const CategoriesFilter = ({
@@ -14,6 +15,7 @@ export const CategoriesFilter = ({
 }: CategoriesFilterProps) => {
 	const [activeCategory, setActiveCategory] = useState<Category>(defaultCategory)
 	const { setFilteredRecipes } = useRecipeStore()
+	const t = useTranslations('MainContent.categoriesFilter')
 
 	const handleCategory = (category: Category = globalDefaultCategory) => {
 		if (category === activeCategory) return
@@ -29,7 +31,7 @@ export const CategoriesFilter = ({
 			<Button
 				variant={globalDefaultCategory === activeCategory ? 'featured' : undefined}
 				onClick={() => handleCategory()}>
-				Todo
+				{t('all')}
 			</Button>
 			{categories.map((category, i) => (
 				<Button

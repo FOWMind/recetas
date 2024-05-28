@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { getUniqueValues, recipeCategoryFormatter } from '@/utils'
 import { useRecipeStore } from '@/store'
 import dynamic from 'next/dynamic'
+import { useTranslations } from 'next-intl'
 
 const DynamicRecipeList = dynamic(async () => (await import('@/components')).RecipeList, {
 	loading: () => <Loading />,
@@ -13,6 +14,7 @@ const DynamicRecipeList = dynamic(async () => (await import('@/components')).Rec
 export const MainContent = ({ className = '', ...props }: MainContentProps) => {
 	const { recipes, filteredRecipes } = useRecipeStore()
 	const [recipesCategories, setRecipesCategories] = useState<Category[]>([])
+	const t = useTranslations('MainContent')
 
 	useEffect(() => {
 		if (!recipes) {
@@ -29,7 +31,7 @@ export const MainContent = ({ className = '', ...props }: MainContentProps) => {
 	return (
 		<main className={`mt-14 ${className}`} {...props}>
 			<Headline as="h3" size="sm">
-				Publicaciones
+				{t('posts')}
 			</Headline>
 			<CategoriesFilter categories={recipesCategories} categoryFormatter={recipeCategoryFormatter} />
 			{recipes && <DynamicRecipeList recipes={filteredRecipes ?? recipes} />}
