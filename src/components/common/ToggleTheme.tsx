@@ -15,7 +15,7 @@ export const ToggleTheme = ({ className = '', ...props }: ToggleThemeProps) => {
 
 	return (
 		<button
-			className="outline-none bg-neutral-300 dark:bg-neutral-900 p-2 rounded-md border-none cursor-pointer flex items-center justify-start gap-x-2"
+			className="outline-none bg-none p-2 rounded-full border-none cursor-pointer flex items-center justify-start gap-x-2"
 			onClick={onClick}
 			{...props}>
 			<Icon icon={dark ? MdDarkMode : MdLightMode} className="text-violet-800 dark:text-yellow-500" />
