@@ -9,7 +9,5 @@ export const Wrapper = ({ className = '', ...props }: WrapperProps) => {
 	useEffect(() => setInitialTheme(), [setInitialTheme])
 	useEffect(() => setInitialRecipes(), [setInitialRecipes])
 
-	return (
-		<div className={`mx-auto min-h-screen w-full max-w-screen-lg p-5 2xl:max-w-screen-xl ${className}`} {...props} />
-	)
+	return <div className={`mx-auto w-full max-w-screen-lg px-5 2xl:max-w-screen-xl ${className}`} {...props} />
 }

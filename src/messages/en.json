@@ -32,6 +32,9 @@
 			"all": "All"
 		}
 	},
+	"Footer": {
+		"copyright": "All rights reserved."
+	},
 	"NotFound": {
 		"description": "We can't find this page.",
 		"button": "Back to home"

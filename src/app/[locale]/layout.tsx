@@ -1,4 +1,4 @@
-import { Header, Wrapper } from '@/components'
+import { Footer, Header, Wrapper } from '@/components'
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
@@ -25,10 +25,9 @@ export default async function LocaleLayout({ children, params: { locale } }: Loc
 		<html lang={locale}>
 			<body className={roboto.className}>
 				<NextIntlClientProvider messages={messages}>
-					<Wrapper>
-						<Header />
-						{children}
-					</Wrapper>
+					<Header />
+					<Wrapper>{children}</Wrapper>
+					<Footer />
 				</NextIntlClientProvider>
 			</body>
 		</html>

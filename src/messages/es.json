@@ -32,6 +32,9 @@
 			"all": "Todo"
 		}
 	},
+	"Footer": {
+		"copyright": "Todos los derechos reservados."
+	},
 	"NotFound": {
 		"description": "No hemos podido encontrar la página a la que ingresaste.",
 		"button": "Ir a inicio"
