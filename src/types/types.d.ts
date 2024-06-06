@@ -27,6 +27,23 @@ export interface ThemeState {
 	getIsDark: () => boolean
 }
 
+export interface LocaleLayoutProps {
+	children: React.ReactNode
+	params: {
+		locale: string
+	}
+}
+
+export interface Language {
+	path: string
+	name: string
+}
+
+export interface useClickOutsideProps {
+	ref: React.RefObject<HTMLElement>
+	handleClick: () => void
+}
+
 export interface RestOfProps {
 	[restOfProps: string]: any
 }
@@ -111,6 +128,7 @@ export interface LinkListProps extends OptionalClassName, Omit<LinkProps, 'href'
 
 export interface SubmenuProps extends RestOfProps, OptionalClassName {
 	children: MappableChildren
+	noHover?: boolean
 }
 
 export interface IconProps extends RestOfProps, OptionalClassName {
@@ -127,4 +145,8 @@ export interface FieldGroupProps extends RestOfProps, OptionalClassName {
 
 export interface RecipeListProps extends RestOfProps, OptionalClassName {
 	recipes: Recipe[]
+}
+
+export interface LanguageSelectorModalProps {
+	toggleSelector: () => void
 }

@@ -1,8 +1,5 @@
 {
 	"Header": {
-		"logo": {
-			"self": "Recetas"
-		},
 		"navigation": {
 			"home": "Inicio",
 			"explore": {
@@ -33,7 +30,10 @@
 		}
 	},
 	"Footer": {
-		"copyright": "Todos los derechos reservados."
+		"copyright": "Todos los derechos reservados.",
+		"languageSelector": {
+			"label": "Idioma"
+		}
 	},
 	"NotFound": {
 		"description": "No hemos podido encontrar la página a la que ingresaste.",

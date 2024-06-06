@@ -1,4 +1,5 @@
 import { Footer, Header, Wrapper } from '@/components'
+import type { LocaleLayoutProps } from '@/types'
 import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
@@ -9,13 +10,6 @@ const roboto = Roboto({ weight: ['400', '500', '700'], subsets: ['latin'] })
 export const metadata: Metadata = {
 	title: 'Recetas',
 	description: '¡Encuentra todo tipo de recetas!',
-}
-
-interface LocaleLayoutProps {
-	children: React.ReactNode
-	params: {
-		locale: string
-	}
 }
 
 export default async function LocaleLayout({ children, params: { locale } }: LocaleLayoutProps) {

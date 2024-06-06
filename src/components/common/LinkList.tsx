@@ -12,7 +12,9 @@ export const LinkList = ({ label, as, href = '#', className = '', children, ...p
 					{label}
 					<Icon icon={IoIosArrowForward} size={16} />
 				</As>
-				<Submenu className="hidden-submenu submenu-transition absolute bottom-0 left-0">{children}</Submenu>
+				<Submenu className="hidden-submenu submenu-transition absolute bottom-0 left-0 translate-y-[90%]">
+					{children}
+				</Submenu>
 			</Link>
 		</>
 	)
