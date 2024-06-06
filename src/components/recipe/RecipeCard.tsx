@@ -1,6 +1,7 @@
 import type { RecipeCardProps } from '@/types'
 import Image from 'next/image'
 import { Headline, Link } from '@/components'
+import { dateFormatter } from '@/utils'
 
 export const RecipeCard = ({
 	className = '',
@@ -19,9 +20,7 @@ export const RecipeCard = ({
 				{...props}>
 				<Image src={image} width={380} height={384} alt="" className="h-72 w-full object-cover" />
 				<div className="p-5">
-					<time className="text-sm text-neutral-800 xl:text-base dark:text-neutral-300">
-						{datetime.toLocaleDateString()}
-					</time>
+					<time className="text-sm text-neutral-800 xl:text-base dark:text-neutral-300">{dateFormatter(datetime)}</time>
 					<Headline size="xs" className="!line-clamp-3">
 						{title}
 					</Headline>

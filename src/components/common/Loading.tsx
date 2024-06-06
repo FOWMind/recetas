@@ -1,5 +1,7 @@
-import { Headline } from './Headline'
+import { useTranslations } from 'next-intl'
+import { Headline } from '@/components'
 
 export const Loading = () => {
-	return <Headline size="xs">Cargando...</Headline>
+	const t = useTranslations('Loading')
+	return <Headline size="xs">{t('self')}</Headline>
 }

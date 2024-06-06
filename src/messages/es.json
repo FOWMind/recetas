@@ -38,5 +38,8 @@
 	"NotFound": {
 		"description": "No hemos podido encontrar la página a la que ingresaste.",
 		"button": "Ir a inicio"
+	},
+	"Loading": {
+		"self": "Cargando..."
 	}
 }

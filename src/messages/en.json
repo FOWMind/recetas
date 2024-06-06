@@ -38,5 +38,8 @@
 	"NotFound": {
 		"description": "We can't find this page.",
 		"button": "Back to home"
+	},
+	"Loading": {
+		"self": "Loading..."
 	}
 }
