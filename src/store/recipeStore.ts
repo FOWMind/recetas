@@ -4,7 +4,10 @@ import { Category, RecipeState } from '@/types'
 import { create } from 'zustand'
 
 export const useRecipeStore = create<RecipeState>((set, get) => ({
-	recipes: [],
+	recipes: {
+		pages: 0,
+		data: [],
+	},
 	filteredRecipes: null,
 
 	setInitialRecipes: () => {
@@ -12,13 +15,13 @@ export const useRecipeStore = create<RecipeState>((set, get) => ({
 		set({ recipes })
 	},
 	setFilteredRecipes: (category: Category) => {
-		const initialRecipes = get().recipes
+		const initialRecipes = get().recipes.data
 		if (!initialRecipes) return
 		if (category === globalDefaultCategory) {
 			set({ filteredRecipes: null })
 			return
 		}
-		const filtered = recipes.filter((r) => r.categories.includes(category))
+		const filtered = recipes.data.filter((r) => r.categories.includes(category))
 		set({ filteredRecipes: filtered })
 	},
 }))

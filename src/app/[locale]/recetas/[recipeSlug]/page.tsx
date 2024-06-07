@@ -10,7 +10,7 @@ const DynamicRecipeContent = dynamic(() => import('@/components').then((mod) => 
 
 export default function RecipePage({ params: { recipeSlug } }: RecipePageProps) {
 	const { recipes } = useRecipeStore()
-	const recipeBySlug = recipes && recipes.find((recipe) => recipe.postSlug === recipeSlug)
+	const recipeBySlug = recipes && recipes.data.find((recipe) => recipe.postSlug === recipeSlug)
 
 	if (!recipeBySlug) return
 

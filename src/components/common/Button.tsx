@@ -8,7 +8,7 @@ enum variants {
 export const Button = ({ className = '', as: As = 'button', variant = 'default', ...props }: ButtonProps) => {
 	return (
 		<As
-			className={`inline-block rounded-full px-10 py-3 text-center font-medium ${variants[variant]} ${className}`}
+			className={`inline-block rounded-full px-10 py-3 text-center font-medium ${variant && variants[variant]} ${className}`}
 			{...props}
 		/>
 	)

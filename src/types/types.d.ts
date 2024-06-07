@@ -4,7 +4,7 @@ import { IconType as ReactIconType } from 'react-icons'
 export type AsProp = keyof JSX.IntrinsicElements
 export type Heading = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 export type ComponentSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-export type ButtonVariant = 'default' | 'featured'
+export type ButtonVariant = 'default' | 'featured' | null
 export type MappableChildren = React.ReactElement | Array<React.ReactElement>
 export type IconType = ReactIconType
 export type Category = number
@@ -103,6 +103,11 @@ export interface Recipe {
 	content?: string
 }
 
+export interface RecipeResponse {
+	pages: number
+	data: Recipe[]
+}
+
 export interface RecipeCardProps extends RestOfProps, OptionalClassName, Omit<Recipe, 'id' | 'thumbnail'> {}
 
 export interface RecipeContentProps {
@@ -110,7 +115,7 @@ export interface RecipeContentProps {
 }
 
 export interface RecipeState {
-	recipes: Recipe[] | null
+	recipes: RecipeResponse
 	filteredRecipes: Recipe[] | null
 	setInitialRecipes: Function
 	setFilteredRecipes: (category: Category) => void
@@ -149,4 +154,9 @@ export interface RecipeListProps extends RestOfProps, OptionalClassName {
 
 export interface LanguageSelectorModalProps {
 	toggleSelector: () => void
+}
+
+export interface PaginationProps extends RestOfProps, OptionalClassName {
+	amount: number
+	currentPage: number
 }

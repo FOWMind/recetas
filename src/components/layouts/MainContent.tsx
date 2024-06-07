@@ -1,6 +1,6 @@
 'use client'
 import type { Category, MainContentProps } from '@/types'
-import { CategoriesFilter, Headline, Loading } from '@/components'
+import { CategoriesFilter, Headline, Loading, Pagination } from '@/components'
 import { useEffect, useState } from 'react'
 import { getUniqueValues, recipeCategoryFormatter } from '@/utils'
 import { useRecipeStore } from '@/store'
@@ -23,7 +23,7 @@ export const MainContent = ({ className = '', ...props }: MainContentProps) => {
 		}
 
 		// TODO: Compare if uniqueCategories is equal to categories to avoid unnecessary updates
-		const allCategories = recipes.flatMap((recipe) => recipe.categories)
+		const allCategories = recipes.data.flatMap((recipe) => recipe.categories)
 		const uniqueCategories = getUniqueValues(allCategories)
 		setRecipesCategories(uniqueCategories)
 	}, [recipes])
@@ -34,7 +34,8 @@ export const MainContent = ({ className = '', ...props }: MainContentProps) => {
 				{t('posts')}
 			</Headline>
 			<CategoriesFilter categories={recipesCategories} categoryFormatter={recipeCategoryFormatter} />
-			{recipes && <DynamicRecipeList recipes={filteredRecipes ?? recipes} />}
+			{recipes && <DynamicRecipeList recipes={filteredRecipes ?? recipes.data} />}
+			{/*<Pagination amount={recipes.pages} currentPage={1} className="mt-6" />*/}
 		</main>
 	)
 }
