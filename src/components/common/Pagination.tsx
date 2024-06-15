@@ -10,7 +10,7 @@ export const Pagination = ({ className = '', amount, currentPage }: PaginationPr
 			</Button>
 
 			{[...Array(amount)].map((_, i) => (
-				<Button variant={currentPage === i + 1 ? 'featured' : null} className="!px-0 w-12">
+				<Button key={`page_${i}`} variant={currentPage === i + 1 ? 'featured' : null} className="!px-0 w-12">
 					{i + 1}
 				</Button>
 			))}

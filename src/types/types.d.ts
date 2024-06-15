@@ -148,6 +148,12 @@ export interface FieldGroupProps extends RestOfProps, OptionalClassName {
 	icon?: IconType
 }
 
+export interface RecipesProps {
+	hasFilter?: boolean
+	hasPagination?: boolean
+	limit?: number
+}
+
 export interface RecipeListProps extends RestOfProps, OptionalClassName {
 	recipes: Recipe[]
 }

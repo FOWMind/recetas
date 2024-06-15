@@ -15,7 +15,7 @@ export const CategoriesFilter = ({
 }: CategoriesFilterProps) => {
 	const [activeCategory, setActiveCategory] = useState<Category>(defaultCategory)
 	const { setFilteredRecipes } = useRecipeStore()
-	const t = useTranslations('MainContent.categoriesFilter')
+	const t = useTranslations('Recipes.categoriesFilter')
 
 	const handleCategory = (category: Category = globalDefaultCategory) => {
 		if (category === activeCategory) return
@@ -26,7 +26,7 @@ export const CategoriesFilter = ({
 
 	return (
 		<div
-			className={`my-6 flex w-fit gap-y-4 rounded-full border border-gray-300 p-1 dark:border-neutral-800 ${className}`}
+			className={`mb-6 flex w-fit gap-y-4 rounded-full border border-gray-300 p-1 dark:border-neutral-800 ${className}`}
 			{...props}>
 			<Button
 				variant={globalDefaultCategory === activeCategory ? 'featured' : undefined}
@@ -35,7 +35,7 @@ export const CategoriesFilter = ({
 			</Button>
 			{categories.map((category, i) => (
 				<Button
-					key={i}
+					key={category + i}
 					variant={category === activeCategory ? 'featured' : undefined}
 					onClick={() => handleCategory(category)}>
 					{categoryFormatter(category)}

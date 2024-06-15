@@ -1,3 +1,4 @@
 export * from './RecipeCard'
-export * from './RecipeList'
 export * from './RecipeContent'
+export * from './RecipeList'
+export * from './Recipes'

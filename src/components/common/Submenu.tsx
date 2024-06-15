@@ -18,7 +18,7 @@ export const Submenu = ({ className = '', children, onClose = () => {}, ...props
 			{...props}>
 			{Children.map(children, (child, i) => (
 				<li
-					key={i}
+					key={child + i.toString()}
 					className="direct-child-block [&>*]:hover:bg-gray-200 [&>*]:dark:hover:bg-neutral-800 [&>*]:rounded-none">
 					{child}
 				</li>

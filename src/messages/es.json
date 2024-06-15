@@ -23,10 +23,13 @@
 	"Hero": {
 		"viewRecipe": "Ver receta"
 	},
-	"MainContent": {
+	"Recipes": {
 		"posts": "Publicaciones",
 		"categoriesFilter": {
 			"all": "Todo"
+		},
+		"list": {
+			"empty": "No hay ninguna receta para mostrar."
 		}
 	},
 	"Footer": {

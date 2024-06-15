@@ -23,10 +23,13 @@
 	"Hero": {
 		"viewRecipe": "View recipe"
 	},
-	"MainContent": {
+	"Recipes": {
 		"posts": "Posts",
 		"categoriesFilter": {
 			"all": "All"
+		},
+		"list": {
+			"empty": "There is no recipe to show."
 		}
 	},
 	"Footer": {

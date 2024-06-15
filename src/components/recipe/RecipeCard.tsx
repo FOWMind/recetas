@@ -14,7 +14,7 @@ export const RecipeCard = ({
 	...props
 }: RecipeCardProps) => {
 	return (
-		<Link href={`/recetas/${postSlug}`} className="p-0" shallow={true}>
+		<Link href={`/recetas/${postSlug}`} className="!p-0" shallow={true}>
 			<article
 				className={`overflow-hidden rounded-2xl border border-gray-300 dark:border-neutral-800 ${className}`}
 				{...props}>
