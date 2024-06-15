@@ -12,7 +12,7 @@ export const Headline = ({ as = 'h2', size = 'md', featured, className = '', ...
 	const As = as
 	return (
 		<As
-			className={`block font-medium !leading-tight text-black dark:text-white ${featured ? 'text-orange-500 dark:text-orange-300' : 'text-black dark:text-white'} ${sizes[size]} ${className}`}
+			className={`block font-medium !leading-tight ${featured ? 'text-orange-500 dark:text-orange-300' : 'text-black dark:text-white'} ${sizes[size]} ${className}`}
 			{...props}
 		/>
 	)

@@ -11,7 +11,7 @@ export const RecipeContent = ({ recipe }: RecipeContentProps) => {
 					src={recipe.thumbnail}
 					width={1280}
 					height={384}
-					alt="Imagen de la receta"
+					alt="Portada de la receta"
 					className="block h-96 w-full object-cover object-center rounded-xl"
 				/>
 			)}
