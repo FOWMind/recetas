@@ -4,6 +4,7 @@ import { IconType as ReactIconType } from 'react-icons'
 export type AsProp = keyof JSX.IntrinsicElements
 export type Heading = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 export type ComponentSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+export type Button = 'button' | 'span'
 export type ButtonVariant = 'default' | 'featured' | null
 export type MappableChildren = React.ReactElement | Array<React.ReactElement>
 export type IconType = ReactIconType
@@ -76,8 +77,10 @@ export interface ToggleThemeProps extends RestOfProps, OptionalClassName {}
 export interface HeroProps extends RestOfProps, OptionalClassName {}
 export interface MainContentProps extends RestOfProps, OptionalClassName {}
 
-export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
+export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+	as?: Button
 	variant?: ButtonVariant
+	disabled?: boolean
 }
 
 export interface ParagraphProps extends RestOfProps, OptionalClassName {}
@@ -115,6 +118,10 @@ export interface RecipePagination {
 	pageAmount: number
 	takenAmount: number
 	setCurrentPage?: (page) => void
+}
+
+export interface RecipePaginationProviderProps {
+	children: React.ReactNode
 }
 
 export interface RecipeCardProps extends RestOfProps, OptionalClassName, Omit<Recipe, 'id' | 'thumbnail'> {}
@@ -173,3 +180,26 @@ export interface LanguageSelectorModalProps {
 }
 
 export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {}
+
+export interface PaginationArrowsProps {
+	children: React.ReactNode
+}
+
+export interface PaginationButtonProps extends ButtonProps {
+	value: number
+	next?: boolean
+	previous?: boolean
+	children: React.ReactNode
+}
+
+export interface PaginationExtraPagesProps {
+	children: React.ReactNode
+}
+
+export interface PaginationSiblingsProps {
+	children: React.ReactNode
+}
+
+export interface PaginationStaticPagesProps {
+	children: React.ReactNode
+}

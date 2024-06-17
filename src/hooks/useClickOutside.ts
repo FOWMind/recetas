@@ -8,5 +8,5 @@ export const useClickOutside = ({ ref, handleClick }: useClickOutsideProps) => {
 		}
 		document.addEventListener('click', close)
 		return () => document.removeEventListener('click', close)
-	}, [])
+	}, [ref, handleClick])
 }

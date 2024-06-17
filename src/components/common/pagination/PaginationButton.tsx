@@ -1,14 +1,8 @@
-import type { ButtonProps } from '@/types'
+import type { PaginationButtonProps } from '@/types'
 import { useContext, useMemo } from 'react'
-import { Button, Link } from '@/components'
+import { Button } from '@/components'
 import { RecipePaginationContext } from '@/context'
 
-interface PaginationButtonProps extends ButtonProps {
-	value: number
-	next?: boolean
-	previous?: boolean
-	children: React.ReactNode
-}
 export const PaginationButton = ({ value, next, previous, disabled, children, ...props }: PaginationButtonProps) => {
 	const { currentPage, lastPage, setCurrentPage } = useContext(RecipePaginationContext)
 
@@ -23,7 +17,6 @@ export const PaginationButton = ({ value, next, previous, disabled, children, ..
 	const handleClick = () => {
 		if (!setCurrentPage) return
 		setCurrentPage(value)
-		console.log(currentPage, value)
 	}
 
 	return (

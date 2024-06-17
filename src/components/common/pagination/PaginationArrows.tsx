@@ -1,11 +1,8 @@
 import { Icon, PaginationButton } from '@/components'
 import { RecipePaginationContext } from '@/context'
+import type { PaginationArrowsProps } from '@/types'
 import { useContext } from 'react'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
-
-interface PaginationArrowsProps {
-	children: React.ReactNode
-}
 
 export const PaginationArrows = ({ children }: PaginationArrowsProps) => {
 	const { currentPage } = useContext(RecipePaginationContext)

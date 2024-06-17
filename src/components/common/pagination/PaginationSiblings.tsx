@@ -1,10 +1,7 @@
 import { PaginationButton } from '@/components'
 import { RecipePaginationContext } from '@/context'
+import type { PaginationSiblingsProps } from '@/types'
 import { useContext } from 'react'
-
-interface PaginationSiblingsProps {
-	children: React.ReactNode
-}
 
 export const PaginationSiblings = ({ children }: PaginationSiblingsProps) => {
 	const { siblingAmount, currentPage, lastPage } = useContext(RecipePaginationContext)
