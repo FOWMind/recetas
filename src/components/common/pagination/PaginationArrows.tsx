@@ -10,14 +10,14 @@ export const PaginationArrows = ({ children }: PaginationArrowsProps) => {
 	return (
 		<>
 			{/* Previous */}
-			<PaginationButton variant="featured" value={currentPage - 1}>
+			<PaginationButton variant="featured" value={currentPage - 1} previous>
 				<Icon icon={MdKeyboardArrowLeft} />
 			</PaginationButton>
 
 			{children}
 
 			{/* Next */}
-			<PaginationButton variant="featured" value={currentPage + 1}>
+			<PaginationButton variant="featured" value={currentPage + 1} next>
 				<Icon icon={MdKeyboardArrowRight} />
 			</PaginationButton>
 		</>

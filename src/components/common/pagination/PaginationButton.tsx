@@ -12,7 +12,7 @@ export const PaginationButton = ({ value, next, previous, disabled, children, ..
 		if (next && currentPage >= lastPage) return true
 
 		return false
-	}, [currentPage, disabled, lastPage, next, previous])
+	}, [currentPage, lastPage, disabled, previous, next])
 
 	const handleClick = () => {
 		if (!setCurrentPage) return

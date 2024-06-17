@@ -12,6 +12,7 @@ export const RecipeContent = ({ recipe }: RecipeContentProps) => {
 					width={1280}
 					height={384}
 					alt="Portada de la receta"
+					priority={false}
 					className="block h-96 w-full object-cover object-center rounded-xl"
 				/>
 			)}
