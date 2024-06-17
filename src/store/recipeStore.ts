@@ -9,10 +9,34 @@ export const useRecipeStore = create<RecipeState>((set, get) => ({
 		data: [],
 	},
 	filteredRecipes: null,
-
+	pagination: {
+		currentPage: 1,
+		lastPage: 0,
+		siblingAmount: 3,
+		pageAmount: 0,
+		takenAmount: 10,
+		setCurrentPage: (page: number) => {
+			const newPagination = {
+				...get().pagination,
+				currentPage: page,
+			}
+			set({ pagination: newPagination })
+		},
+	},
 	setInitialRecipes: () => {
 		// Getting local data..
-		set({ recipes })
+		const prevPagination = get().pagination
+		const { pageAmount, takenAmount } = {
+			pageAmount: recipes.pages,
+			takenAmount: prevPagination.takenAmount,
+		}
+		const newPagination = {
+			...prevPagination,
+			pageAmount,
+			lastPage: takenAmount > pageAmount ? pageAmount : Math.floor(pageAmount / takenAmount),
+			setCurrentPage: get().pagination.setCurrentPage,
+		}
+		set({ recipes, pagination: newPagination })
 	},
 	setFilteredRecipes: (category: Category) => {
 		const initialRecipes = get().recipes.data

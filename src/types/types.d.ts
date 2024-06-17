@@ -76,7 +76,7 @@ export interface ToggleThemeProps extends RestOfProps, OptionalClassName {}
 export interface HeroProps extends RestOfProps, OptionalClassName {}
 export interface MainContentProps extends RestOfProps, OptionalClassName {}
 
-export interface ButtonProps extends RestOfProps, OptionalClassName {
+export interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
 	variant?: ButtonVariant
 }
 
@@ -108,6 +108,15 @@ export interface RecipeResponse {
 	data: Recipe[]
 }
 
+export interface RecipePagination {
+	currentPage: number
+	lastPage: number
+	siblingAmount: number
+	pageAmount: number
+	takenAmount: number
+	setCurrentPage?: (page) => void
+}
+
 export interface RecipeCardProps extends RestOfProps, OptionalClassName, Omit<Recipe, 'id' | 'thumbnail'> {}
 
 export interface RecipeContentProps {
@@ -117,6 +126,7 @@ export interface RecipeContentProps {
 export interface RecipeState {
 	recipes: RecipeResponse
 	filteredRecipes: Recipe[] | null
+	pagination: RecipePagination
 	setInitialRecipes: Function
 	setFilteredRecipes: (category: Category) => void
 }
@@ -162,7 +172,4 @@ export interface LanguageSelectorModalProps {
 	toggleSelector: () => void
 }
 
-export interface PaginationProps extends RestOfProps, OptionalClassName {
-	amount: number
-	currentPage: number
-}
+export interface PaginationProps extends React.HTMLProps<HTMLDivElement> {}

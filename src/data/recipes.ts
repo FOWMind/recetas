@@ -1,7 +1,7 @@
 import type { RecipeResponse } from '@/types'
 
 export const recipes: RecipeResponse = {
-	pages: 2,
+	pages: 200,
 	data: [
 		{
 			id: '123',

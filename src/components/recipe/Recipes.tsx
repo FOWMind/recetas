@@ -1,5 +1,6 @@
 'use client'
 import { CategoriesFilter, Headline, Loading, Pagination } from '@/components'
+import { RecipePaginationProvider } from '@/context'
 import { useRecipeStore } from '@/store'
 import type { Category, RecipesProps } from '@/types'
 import { getUniqueValues, recipeCategoryFormatter } from '@/utils'
@@ -12,7 +13,11 @@ const DynamicRecipeList = dynamic(async () => (await import('@/components')).Rec
 })
 
 export const Recipes = ({ hasFilter = false, hasPagination = false, limit = 9 }: RecipesProps) => {
-	const { recipes, filteredRecipes } = useRecipeStore()
+	const {
+		recipes,
+		filteredRecipes,
+		pagination: { pageAmount },
+	} = useRecipeStore()
 	const [categories, setCategories] = useState<Category[]>([])
 	const t = useTranslations('Recipes')
 	const recipeData =
@@ -32,17 +37,17 @@ export const Recipes = ({ hasFilter = false, hasPagination = false, limit = 9 }:
 	}, [recipes, hasFilter])
 
 	return (
-		<section>
-			<Headline as="h3" size="sm" className="mb-6">
-				{t('posts')}
-			</Headline>
-			{hasFilter && recipeData.length > 0 ? (
-				<CategoriesFilter categories={categories} categoryFormatter={recipeCategoryFormatter} />
-			) : null}
-			{recipes && <DynamicRecipeList recipes={recipeData} />}
-			{hasPagination && recipes.pages > 0 ? (
-				<Pagination amount={recipes.pages} currentPage={1} className="mt-6" />
-			) : null}
-		</section>
+		<RecipePaginationProvider>
+			<section>
+				<Headline as="h3" size="sm" className="mb-6">
+					{t('posts')}
+				</Headline>
+				{hasFilter && recipeData.length > 0 ? (
+					<CategoriesFilter categories={categories} categoryFormatter={recipeCategoryFormatter} />
+				) : null}
+				{recipes && <DynamicRecipeList recipes={recipeData} />}
+				{hasPagination && pageAmount > 0 ? <Pagination className="mt-6" /> : null}
+			</section>
+		</RecipePaginationProvider>
 	)
 }
