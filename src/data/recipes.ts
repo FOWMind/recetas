@@ -1,7 +1,16 @@
 import type { RecipeResponse } from '@/types'
 
+export const getRecipes = (page: number = 1, taken: number = 10) => {
+	const from = page === 1 ? 0 : (page - 1) * taken
+	const to = from + taken
+	return {
+		pages: recipes.pages,
+		data: recipes.data.slice(from, to),
+	}
+}
+
 export const recipes: RecipeResponse = {
-	pages: 200,
+	pages: 1,
 	data: [
 		{
 			id: '123',

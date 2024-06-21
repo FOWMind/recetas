@@ -1,6 +1,7 @@
 'use client'
 import { CategoriesFilter, Headline, Loading, Pagination } from '@/components'
 import { RecipePaginationProvider } from '@/context'
+import { getRecipes } from '@/data'
 import { useRecipeStore } from '@/store'
 import type { Category, RecipesProps } from '@/types'
 import { getUniqueValues, recipeCategoryFormatter } from '@/utils'
@@ -12,16 +13,15 @@ const DynamicRecipeList = dynamic(async () => (await import('@/components')).Rec
 	loading: () => <Loading />,
 })
 
-export const Recipes = ({ hasFilter = false, hasPagination = false, limit = 9 }: RecipesProps) => {
+export const Recipes = ({ hasFilter = false, hasPagination = false }: RecipesProps) => {
 	const {
 		recipes,
 		filteredRecipes,
-		pagination: { pageAmount },
+		pagination: { pageAmount, currentPage, takenAmount },
 	} = useRecipeStore()
 	const [categories, setCategories] = useState<Category[]>([])
 	const t = useTranslations('Recipes')
-	const recipeData =
-		hasFilter && Array.isArray(filteredRecipes) ? filteredRecipes?.slice(0, limit) : recipes.data.slice(0, limit)
+	const recipeData = hasFilter && Array.isArray(filteredRecipes) ? filteredRecipes : recipes.data
 
 	useEffect(() => {
 		if (!hasFilter) return
@@ -31,7 +31,7 @@ export const Recipes = ({ hasFilter = false, hasPagination = false, limit = 9 }:
 		}
 
 		// TODO: Compare if uniqueCategories is equal to categories to avoid unnecessary updates
-		const allCategories = recipes.data.flatMap((recipe) => recipe.categories)
+		const allCategories = getRecipes(currentPage, takenAmount).data.flatMap((recipe) => recipe.categories)
 		const uniqueCategories = getUniqueValues(allCategories)
 		setCategories(uniqueCategories)
 	}, [recipes, hasFilter])

@@ -1,5 +1,5 @@
 import { globalDefaultCategory } from '@/constants'
-import { recipes } from '@/data'
+import { getRecipes, recipes } from '@/data'
 import { Category, RecipeState } from '@/types'
 import { create } from 'zustand'
 
@@ -20,7 +20,8 @@ export const useRecipeStore = create<RecipeState>((set, get) => ({
 				...get().pagination,
 				currentPage: page,
 			}
-			set({ pagination: newPagination })
+			console.log(getRecipes(page, get().pagination.takenAmount))
+			set({ recipes: getRecipes(page, get().pagination.takenAmount), pagination: newPagination })
 		},
 	},
 	setInitialRecipes: () => {
@@ -45,7 +46,8 @@ export const useRecipeStore = create<RecipeState>((set, get) => ({
 			set({ filteredRecipes: null })
 			return
 		}
-		const filtered = recipes.data.filter((r) => r.categories.includes(category))
+		const { currentPage, takenAmount } = get().pagination
+		const filtered = getRecipes(currentPage, takenAmount).data.filter((r) => r.categories.includes(category))
 		set({ filteredRecipes: filtered })
 	},
 }))
