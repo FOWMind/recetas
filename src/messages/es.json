@@ -21,7 +21,8 @@
 		}
 	},
 	"Hero": {
-		"viewRecipe": "Ver receta"
+		"viewRecipe": "Ver receta",
+		"featuredText": "Receta destacada"
 	},
 	"Recipes": {
 		"posts": "Publicaciones",

@@ -104,6 +104,7 @@ export interface Recipe {
 	categories: Category[]
 	// TODO: Make content required (maybe)
 	content?: string
+	featured?: boolean
 }
 
 export interface RecipeResponse {
