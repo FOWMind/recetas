@@ -19,9 +19,13 @@ export default async function LocaleLayout({ children, params: { locale } }: Loc
 		<html lang={locale}>
 			<body className={roboto.className}>
 				<NextIntlClientProvider messages={messages}>
-					<Header />
-					<Wrapper>{children}</Wrapper>
-					<Footer />
+					<div className="flex flex-col justify-between min-h-screen">
+						<div>
+							<Header />
+							<Wrapper>{children}</Wrapper>
+						</div>
+						<Footer />
+					</div>
 				</NextIntlClientProvider>
 			</body>
 		</html>

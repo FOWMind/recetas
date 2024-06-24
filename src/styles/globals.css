@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+	html {
+		@apply h-full;
+	}
+
 	body {
-		@apply bg-white text-sm text-black 2xl:text-base dark:bg-black dark:text-white;
+		@apply bg-white text-sm text-black 2xl:text-base dark:bg-black dark:text-white min-h-full;
 	}
 
 	h1,
