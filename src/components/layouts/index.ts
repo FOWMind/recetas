@@ -1,4 +1,4 @@
-export * from './Header'
+export * from './header'
 export * from './Hero'
 export * from './MainContent'
 export * from './Navigation'

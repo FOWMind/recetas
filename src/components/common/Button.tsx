@@ -2,7 +2,7 @@ import type { ButtonProps } from '@/types'
 
 enum variants {
 	default = 'bg-white text-black dark:bg-black dark:text-white',
-	featured = 'bg-black text-white dark:bg-neutral-900 dark:text-white',
+	featured = 'bg-black text-white dark:bg-white dark:text-black',
 }
 
 export const Button = ({ className = '', as: As = 'button', variant = 'default', ...props }: ButtonProps) => {

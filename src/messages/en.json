@@ -18,7 +18,8 @@
 		"toggleTheme": {
 			"dark": "Dark mode",
 			"light": "Light mode"
-		}
+		},
+		"auth": "Login"
 	},
 	"Hero": {
 		"viewRecipe": "View recipe",
@@ -32,6 +33,14 @@
 		"list": {
 			"empty": "There is no recipe to show."
 		}
+	},
+	"Login": {
+		"title": "Sign in",
+		"emailOrUsername": "Email or username",
+		"password": "Password",
+		"submit": "Enter",
+		"forgotPassword": "Forgot password?",
+		"createAccount": "Create an account"
 	},
 	"Footer": {
 		"copyright": "All rights reserved.",
