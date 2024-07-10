@@ -34,13 +34,15 @@
 			"empty": "No hay ninguna receta para mostrar."
 		}
 	},
-	"Login": {
-		"title": "Inicia sesión",
+	"AuthPage": {
+		"loginTitle": "Inicia sesión",
+		"registerTitle": "Regístrate",
 		"emailOrUsername": "Correo electrónico o usuario",
 		"password": "Contraseña",
 		"submit": "Entrar",
 		"forgotPassword": "¿Olvidaste tu contraseña?",
-		"createAccount": "Crea una cuenta"
+		"createAccount": "Crea una cuenta",
+		"login": "¿Ya tienes una cuenta? Inicia sesión"
 	},
 	"Footer": {
 		"copyright": "Todos los derechos reservados.",

@@ -34,13 +34,15 @@
 			"empty": "There is no recipe to show."
 		}
 	},
-	"Login": {
-		"title": "Sign in",
+	"AuthPage": {
+		"loginTitle": "Sign in",
+		"registerTitle": "Sign up",
 		"emailOrUsername": "Email or username",
 		"password": "Password",
 		"submit": "Enter",
 		"forgotPassword": "Forgot password?",
-		"createAccount": "Create an account"
+		"createAccount": "Create an account",
+		"login": "Already have an account? Login"
 	},
 	"Footer": {
 		"copyright": "All rights reserved.",
