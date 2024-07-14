@@ -35,7 +35,7 @@ export const CategoriesFilter = ({
 			</Button>
 			{categories.map((category, i) => (
 				<Button
-					key={category + i}
+					key={`filter_btn_category_${category}`}
 					variant={category === activeCategory ? 'featured' : undefined}
 					onClick={() => handleCategory(category)}>
 					{categoryFormatter(category)}
