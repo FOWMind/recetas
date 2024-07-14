@@ -34,7 +34,7 @@ export const Recipes = ({ hasFilter = false, hasPagination = false }: RecipesPro
 		const allCategories = getRecipes(currentPage, takenAmount).data.flatMap((recipe) => recipe.categories)
 		const uniqueCategories = getUniqueValues(allCategories)
 		setCategories(uniqueCategories)
-	}, [recipes, hasFilter])
+	}, [recipes, hasFilter, currentPage, takenAmount])
 
 	return (
 		<RecipePaginationProvider>
