@@ -9,16 +9,16 @@ export const Header = ({ className = '', ...props }: HeaderProps) => {
 	return (
 		<header className={`py-8 mb-5 ${className}`} {...props}>
 			<Wrapper>
-				<div className="flex items-center justify-between gap-28">
-					<div className="flex items-center justify-start gap-28">
-						<Logo />
+				<div className="flex-1 flex items-center justify-between gap-28">
+					<Logo />
+					<div className="flex-1 flex items-center justify-between gap-28">
 						<Navigation />
-					</div>
 
-					<div className="flex items-center justify-start gap-x-5">
-						<FieldGroup icon={IoSearchOutline} placeholder={t('self')} />
-						<ToggleTheme />
-						<AuthButtons />
+						<div className="flex items-center justify-start gap-x-5">
+							<FieldGroup icon={IoSearchOutline} placeholder={t('self')} />
+							<ToggleTheme />
+							<AuthButtons />
+						</div>
 					</div>
 				</div>
 			</Wrapper>
