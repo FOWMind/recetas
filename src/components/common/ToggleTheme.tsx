@@ -1,5 +1,5 @@
 'use client'
-import { ToggleThemeProps } from '@/types'
+import type { ToggleThemeProps } from '@/types'
 import { toggleTheme } from '@/utils'
 import { Icon, Paragraph } from '@/components'
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
