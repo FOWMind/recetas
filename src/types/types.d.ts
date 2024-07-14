@@ -1,5 +1,5 @@
 import { themeClasses } from '@/constants'
-import { IconType as ReactIconType } from 'react-icons'
+import type { IconType as ReactIconType } from 'react-icons'
 
 export type AsProp = keyof JSX.IntrinsicElements
 export type Heading = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -9,6 +9,7 @@ export type ButtonVariant = 'default' | 'featured' | null
 export type MappableChildren = React.ReactElement | Array<React.ReactElement>
 export type IconType = ReactIconType
 export type Category = number
+export type Locale = 'es' | 'en'
 
 export type ThemeClassKey = keyof Omit<ThemeClasses, 'isDefaultVisibleDark'>
 
@@ -36,7 +37,7 @@ export interface LocaleLayoutProps {
 }
 
 export interface Language {
-	path: string
+	path: Locale
 	name: string
 }
 
