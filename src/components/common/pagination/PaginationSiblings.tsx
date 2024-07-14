@@ -13,7 +13,7 @@ export const PaginationSiblings = ({ children }: PaginationSiblingsProps) => {
 				const value = currentPage - siblingAmount + i
 				if (value <= 1) return null
 				return (
-					<PaginationButton key={`page_prev_${i}`} value={value}>
+					<PaginationButton key={`page_prev_${value}`} value={value}>
 						{value}
 					</PaginationButton>
 				)
@@ -26,7 +26,7 @@ export const PaginationSiblings = ({ children }: PaginationSiblingsProps) => {
 				const value = currentPage + (i + 1)
 				if (value >= lastPage) return null
 				return (
-					<PaginationButton key={`page_next_${i}`} value={value}>
+					<PaginationButton key={`page_next_${value}`} value={value}>
 						{value}
 					</PaginationButton>
 				)

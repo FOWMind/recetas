@@ -1,6 +1,6 @@
 import { PaginationButton } from '@/components'
 import { RecipePaginationContext } from '@/context'
-import { PaginationStaticPagesProps } from '@/types'
+import type { PaginationStaticPagesProps } from '@/types'
 import { useContext } from 'react'
 
 export const PaginationStaticPages = ({ children }: PaginationStaticPagesProps) => {

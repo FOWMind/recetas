@@ -1,5 +1,5 @@
 import { themeClasses } from '@/constants'
-import { GetSavedTheme, ThemeClassKey } from '@/types'
+import type { GetSavedTheme, ThemeClassKey } from '@/types'
 
 export const setInitialTheme = () => {
 	const savedTheme = getSavedTheme() as ThemeClassKey

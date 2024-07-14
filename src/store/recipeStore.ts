@@ -1,6 +1,6 @@
 import { globalDefaultCategory } from '@/constants'
 import { getRecipes, recipes } from '@/data'
-import { Category, RecipeState } from '@/types'
+import type { Category, RecipeState } from '@/types'
 import { create } from 'zustand'
 
 export const useRecipeStore = create<RecipeState>((set, get) => ({

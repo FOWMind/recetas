@@ -1,6 +1,6 @@
 import type { RecipeResponse } from '@/types'
 
-export const getRecipes = (page: number = 1, taken: number = 10) => {
+export const getRecipes = (page = 1, taken = 10) => {
 	const from = page === 1 ? 0 : (page - 1) * taken
 	const to = from + taken
 	return {

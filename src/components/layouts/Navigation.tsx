@@ -1,5 +1,5 @@
 import { Link, LinkList } from '@/components'
-import { NavigationProps } from '@/types'
+import type { NavigationProps } from '@/types'
 import { useTranslations } from 'next-intl'
 
 export const Navigation = ({ className = '', ...props }: NavigationProps) => {
