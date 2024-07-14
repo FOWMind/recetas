@@ -20,7 +20,11 @@ export const PaginationButton = ({ value, next, previous, disabled, children, ..
 	}
 
 	return (
-		<Button className="!px-0 w-12" {...props} onClick={handleClick} disabled={isDisabled}>
+		<Button
+			className="!px-0 w-10 h-10 grid place-content-center"
+			{...props}
+			onClick={handleClick}
+			disabled={isDisabled}>
 			{children}
 		</Button>
 	)

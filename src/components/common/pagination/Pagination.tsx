@@ -13,7 +13,7 @@ import { RecipePaginationContext } from '@/context'
 export const Pagination = ({ className = '', ...props }: PaginationProps) => {
 	const { currentPage } = useContext(RecipePaginationContext)
 	return (
-		<div className={`flex gap-2 justify-center flex-wrap ${className}`} {...props}>
+		<div className={`flex gap-2 justify-center items-center flex-wrap ${className}`} {...props}>
 			<PaginationArrows>
 				<PaginationStaticPages>
 					<PaginationExtraPages>
