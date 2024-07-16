@@ -73,7 +73,11 @@ export interface HeadlineProps extends RestOfProps, OptionalClassName {
 }
 
 export interface LogoProps extends RestOfProps, OptionalClassName {}
-export interface NavigationProps extends OptionalClassName {}
+
+export interface NavigationProps extends OptionalClassName {
+	mobile?: boolean
+}
+
 export interface ToggleThemeProps extends RestOfProps, OptionalClassName {}
 export interface HeroProps extends RestOfProps, OptionalClassName {}
 export interface MainContentProps extends RestOfProps, OptionalClassName {}
@@ -204,4 +208,8 @@ export interface PaginationSiblingsProps {
 
 export interface PaginationStaticPagesProps {
 	children: React.ReactNode
+}
+
+export interface MenuProps extends React.PropsWithChildren {
+	mobile?: boolean
 }
